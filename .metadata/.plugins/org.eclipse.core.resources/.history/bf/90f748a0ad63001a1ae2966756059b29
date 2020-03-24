@@ -1,0 +1,5 @@
+package commerce.catalogue.domaine.modele;
+
+public class Utilisateur {
+
+}

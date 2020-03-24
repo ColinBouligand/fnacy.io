@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\Colin\Documents\IUT laval\at04\Bouligand_Colin\eclipse\Workspace\.metadata\.plugins\org.eclipse.jdt.core
+2974374753.index
+2442481258.index

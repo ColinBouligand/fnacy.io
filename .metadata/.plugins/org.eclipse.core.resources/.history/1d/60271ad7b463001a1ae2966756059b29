@@ -1,0 +1,82 @@
+package commerce.catalogue.domaine.modele;
+
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+
+
+/**
+ * Title:        commerce
+ * Description:  Class for e-commerce
+ * Company:      IUT Laval - Université du Mans
+ * Author  C. Bouligand, L. Euvrard
+ */
+@Entity (name="commerce.catalogue.domaine.modele.Artiste")
+@DiscriminatorColumn(
+  name="artiste-type",
+  discriminatorType= DiscriminatorType.STRING
+)
+@DiscriminatorValue("artiste")
+public class Artiste {
+
+	private int id;
+	private String nom; 
+	private String description;
+	
+	public String getNom() {
+		return nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getImage() {
+		return image;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Artiste other = (Artiste) obj;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id != other.id)
+			return false;
+		if (image == null) {
+			if (other.image != null)
+				return false;
+		} else if (!image.equals(other.image))
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		return true;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public int getId() {
+		return id;
+	}
+	private String image;
+
+	
+}
